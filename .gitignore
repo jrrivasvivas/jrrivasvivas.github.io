@@ -1,8 +1,11 @@
-# Keep the public site and its repository documentation in Git.
+# Publish the portfolio source and repository documentation.
 /*
 !/.gitignore
+!/.nojekyll
 !/README.md
-!/site/
+!/index.html
+!/assets/
+!/projects/
 
 .DS_Store
 ._*
@@ -11,3 +14,9 @@ node_modules/
 __pycache__/
 .env
 .env.*
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
