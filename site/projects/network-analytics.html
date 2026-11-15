@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Network Fault Analytics | Jose Roberto Rivas</title>
+  <meta name="description" content="A proposed method for exploring how network alarms relate across time and location.">
+  <link rel="icon" href="data:,">
+  <script src="../assets/js/main.js"></script>
+  <link rel="stylesheet" href="../assets/css/signal.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="site-frame">
+    <header class="site-header" id="top">
+      <div class="wrap masthead">
+        <a class="wordmark" href="../index.html">Jose Roberto Rivas</a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="../projects/" aria-current="page">Work</a>
+          <a href="../index.html#experience">Experience</a>
+          <a href="../index.html#about">About</a>
+          <a href="../blog/">Notes</a>
+          <a href="../index.html#contact">Contact</a>
+        </nav>
+        <div class="theme-control" hidden>
+          <select aria-label="Appearance" data-theme-select>
+            <option value="dark">Dark</option>
+            <option value="light">Light</option>
+            <option value="system">System</option>
+          </select>
+        </div>
+      </div>
+    </header>
+    <main id="main" tabindex="-1">
+      <div class="wrap">
+        <header class="article-head">
+          <nav class="breadcrumb mono" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a><span aria-hidden="true">/</span><a href="./">Work</a>
+            <span aria-hidden="true">/</span><span aria-current="page">Network Fault Analytics</span>
+          </nav>
+          <p class="article-status mono">Concept · Case study · SQL · Python · Synthetic data</p>
+          <h1>Network Fault Analytics</h1>
+          <p class="lead">A proposed method for exploring how network alarms relate across time and location.</p>
+        </header>
+        <div class="article-grid">
+          <nav class="contents" aria-label="On this page">
+            <h2>On this page</h2>
+            <ol>
+              <li><a href="#problem">Problem</a></li>
+              <li><a href="#proposed-data-method">Proposed data &amp; method</a></li>
+              <li><a href="#findings-limitations">Findings &amp; limitations</a></li>
+              <li><a href="#reproducibility">Reproducibility</a></li>
+            </ol>
+          </nav>
+          <article class="case-copy" aria-label="Network Fault Analytics case study">
+            <section id="problem">
+              <h2>
+                Problem
+              </h2>
+              <p>
+                Network operations can generate many alarms around the same time. A useful first step is to organize related events so an analyst can investigate possible relationships without assuming one event caused another.
+              </p>
+            </section>
+            <section id="proposed-data-method">
+              <h2>
+                Proposed data &amp; method
+              </h2>
+              <p>
+                Use synthetic events with a timestamp, site identifier, and alarm category. Group by site and a defined time window using SQL or Python, inspect sequences, and compare candidate clusters against the original event list.
+              </p>
+              <div class="example">
+                <table>
+                  <caption>
+                    Illustrative synthetic events
+                  </caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">
+                        Time
+                      </th>
+                      <th scope="col">
+                        Site
+                      </th>
+                      <th scope="col">
+                        Event
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        09:00
+                      </td>
+                      <td>
+                        Site A
+                      </td>
+                      <td>
+                        Power alert
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        09:04
+                      </td>
+                      <td>
+                        Site A
+                      </td>
+                      <td>
+                        Link alert
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>
+                The timing puts both alerts in the same investigation. Equipment logs can help verify whether they share a cause.
+              </p>
+            </section>
+            <section id="findings-limitations">
+              <h2>
+                Findings &amp; limitations
+              </h2>
+              <p>
+                Measured findings are pending. Window selection, missing events, and clock differences can affect groupings. Domain context and independent evidence are needed to assess causality.
+              </p>
+            </section>
+            <section id="reproducibility">
+              <h2>
+                Reproducibility
+              </h2>
+              <p>
+                The next step is to publish a synthetic dataset, an analysis script, and repeatable results.
+              </p>
+            </section>
+            <a class="case-return" href="./">All projects <span aria-hidden="true">↗</span></a>
+          </article>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="wrap">
+        <a href="../blog/">Notes</a>
+        <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

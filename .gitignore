@@ -1,0 +1,13 @@
+# Keep the public site and its repository documentation in Git.
+/*
+!/.gitignore
+!/README.md
+!/site/
+
+.DS_Store
+._*
+node_modules/
+.cache/
+__pycache__/
+.env
+.env.*
