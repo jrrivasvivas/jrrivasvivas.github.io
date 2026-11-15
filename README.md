@@ -2,7 +2,7 @@
 
 A static portfolio covering telecommunications, data analytics, and technical operations. The approved design is Model 5.
 
-`site/` contains the home page, the project index and case studies, the notes page, and the styles, scripts, portrait, and licensed font used by the site.
+`site/` contains the home page, the project index and case studies, and the styles, scripts, portrait, and licensed font used by the site.
 
 Run this command from the repository root with Python 3:
 
